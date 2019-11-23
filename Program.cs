@@ -10,19 +10,35 @@ namespace TestCODE_WAR
     {
         static void Main(string[] args)
         {
-            // The code provided will print ‚ÄòHello World‚Äô to the console.
-            // Press Ctrl+F5 (or go to Debug > Start Without Debugging) to run your app.
-            Console.WriteLine(true);
+            try
+            {
+                string str = "charis";
+                bool result = IsIsogram(str);
+               
+                // Declare an array
 
-            Console.ReadKey();
 
-            // Go to http://aka.ms/dotnet-get-started-console to continue learning how to build a console app! 
+
+                Console.WriteLine(result);
+                Console.ReadKey();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                Console.ReadKey();
+            }
+            finally
+            {
+                Console.WriteLine("ÕÕ°®“°≈Ÿª");
+                Console.ReadKey();
+            }
         }
+
         public static int[] ArrayDiff(int[] a, int[] b)
         {
 
-            a[0] = 1;
-            a[1] = 2;
+            a[1] = 1;
+            a[0] = 2;
             a[2] = 3;
             b[0] = 2;
             return b;
@@ -42,22 +58,48 @@ namespace TestCODE_WAR
             return xCounter == oCounter;
 
         }
-        public static string CreatePhoneNumber(int[] numbers)
-        {
-            string ;
-            int[] arr1 = new int[9];
-            int i, j;
-            for (i = 0; i < 10; i++)
-            {
-                n[i] = i + 100;
-            }
-            for (j = 0; j < 10; j++)
-            {
-                Console.WriteLine("Element[{0}] = {1}", j, [j]);
-            }
-            Console.ReadKey();
-        }
-    }
 
-    
+        public static string GetMiddle(string s)
+        {
+            if (s.Length % 2 != 0)
+            {
+                return s[((s.Length + 1) / 2) - 1].ToString();
+            }
+            else
+            {
+                return s[s.Length / 2 - 1].ToString() + s[s.Length / 2].ToString();
+            }
+
+        }
+
+
+        public static bool IsIsogram(string str)
+        {
+            var chars = str.ToLower().ToCharArray();
+            var hash = new HashSet<char>();
+
+            foreach (var c in chars)
+            {
+                if (hash.Contains(c))
+                {
+                    return false;
+                }
+                else
+                {
+                    hash.Add(c);
+                }
+            }
+
+            return true;
+        }
+  
+    }
 }
+
+
+
+
+
+
+
+
